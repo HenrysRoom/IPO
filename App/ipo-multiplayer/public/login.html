@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - IPO Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-box">
+    <h1>IPO Builder</h1>
+
+    <input id="username" placeholder="Enter your name" />
+
+    <input id="room" placeholder="Enter room code (e.g. class1)" />
+
+    <button onclick="join()">Join</button>
+</div>
+
+<script>
+function join() {
+    const username = document.getElementById("username").value;
+    const room = document.getElementById("room").value;
+
+    if (!username || !room) return alert("Fill both fields");
+
+    localStorage.setItem("username", username);
+    localStorage.setItem("room", room);
+
+    window.location.href = "/";
+}
+</script>
+
+</body>
+</html>
